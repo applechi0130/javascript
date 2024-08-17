@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>if~else</h2>
+    <script>
+        var avg = 36;
+        if(avg >=60){
+            document.write("通過 <br>");
+        }else{
+            document.write("重修就好喔 <br>");
+        }
+    </script>
+
+    <h2>if~else~if~else</h2>  
+    <script>
+        var name = "cat";
+        if(name == 'cat'){
+            document.write('貓');
+        }else if (name == 'dog'){
+            document.write('狗');
+        }else{
+            document.write('不明生物');
+        }
+    </script>
+
+    <h2>注意!!</h2>
+    <script>
+        var year = 2024;
+        if(year > 1919){
+            document.write('>1919');
+        }else if(year > 2009){
+            document.write('>2009');
+        }else if(year >= 2024){
+            document.write('>=2024');
+        }
+        else{
+            document.write('???');
+        }
+    </script>
+
+    <h2>練習</h2>
+    <script>
+        // 特例:第一類有碩士學歷證明加一千元
+        // 變數/變因 => 用戶 => 類別 | 碩士學位
+        // 呈現 => 補助款
+        var type; // 補助類別
+        var isEdu; // 確認有沒有碩士學位
+        var total = 0; // 補助款
+
+        type = '1'; //'1','2','3'
+        isEdu = false;
+
+        if (type == '1') {
+            total = 5000;
+            if(isEdu == true){
+                //  total = total + 1000;
+                total += 1000;
+            }         
+        } else if( type == '2'){
+            total = 3000; 
+        } else if(type == '3'){
+            total = 1000; 
+        } else{
+            console.log("沒這類");
+        }
+
+        document.write("補助款: " + total + "<br>");
+    </script>
+
+    <h2>if變數</h2>
+    <script>
+        var text = '文字';
+        if(text){
+            document.write(text + "<br>");
+        }else{
+            document.write("沒東西 <br>");
+        }
+    </script>
+
+    <h2>switch</h2>
+    <script>
+        var game = 1;
+        
+        switch(game){
+            case 1:
+                document.write(game + "集合啦!動物森友會");
+            break; // 可以被拿掉,但就會走 case 1 + 2
+            case 2:
+                document.write(game + "薩爾達傳說");
+            break;
+            default :
+            document.write(game + "沒有遊戲可以玩");
+        }
+    </script>
+
+
+</body>
+</html>

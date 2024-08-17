@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: deeppink;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>變數的有效範圍</h2>
+    <script>
+        var a;
+        a = 10;
+        var b;
+        b = 20;
+        var c;
+        c = 30; // 沒有var類就當全域變數
+
+        var f = 100;
+        //  g = 300;
+
+        function test(m, n) {
+            var d = 40;
+            a = 100;
+            d = 400;
+            e = m + n;
+            var f = 50;
+            f = 200;
+            var g = 1000;
+            g = 2000;
+            document.write(g + "<br>");
+        }   // 函式結束時會將此變數空間收回
+
+        test(1, 2);
+
+        document.write(g);
+
+    </script>
+
+<h2>練習1</h2>
+<script>
+    var x = 1;
+    function test(y){
+        document.write(x + "<br>");
+        var x = 100;
+        return x + y;
+    }
+
+    document.write(test(50) + "<br>");
+    document.write(x + "<br>");
+</script>
+
+<h2>練習2</h2>
+<script>
+    var x = 1;
+    function test(y){
+        document.write(x + "<br>");
+        // var x = 100;   // x會找外層的
+        return x + y;
+    }
+
+    document.write(test(50) + "<br>");
+    document.write(x + "<br>");
+</script>
+
+<h2>立即函式</h2>
+<script>
+  var num = '123';
+  (function (){
+    var num2 = '456';
+    document.write(num + num2 + "<br>");
+  })();
+  document.write(num2); // num2在function執行完會被收回
+</script>
+
+
+
+</body>
+
+</html>

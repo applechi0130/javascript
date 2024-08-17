@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>沒有參數也沒有傳回值</h2>
+    <script>
+        function sayHello() {
+            document.write("Hello~~~<br>");
+        }
+        sayHello();
+    </script>
+
+    <h2>沒有參數也沒有傳回值</h2>
+    <script>
+        function sayHelloToU(name) {
+            document.write("Hello," + name + "~~~<br>");
+        }
+        sayHelloToU("Jack");
+        sayHelloToU("Amy");
+
+        function showDayAndMsg(day, msg) {
+            document.write("星期" + day + ":" + msg + "<br>");
+        }
+        showDayAndMsg("日", "今天應該要放假!");
+        showDayAndMsg("一", "不想上班哦!");
+    </script>
+
+    <h2>有參數有傳回值</h2>
+    <script>
+        function showYourName(name) {
+            return "你的名字:" + name;
+        }
+        // showYourName('Tom');
+        document.write(showYourName("Tom") + "<br>");
+        document.write(showYourName("Judy") + "<br>");
+
+        function showTotal(num) {
+            var all = num * 10;
+            return all;
+        }
+        document.write(showTotal(21) + "<br>");
+    </script>
+
+    <h2>練習</h2>
+    <script>
+        function showTypeTotal(type, isEdu) {
+            var total = 0; // 補助款
+
+            if (type == '1') {
+                total = 5000;
+                if (isEdu == true) {
+                    //  total = total + 1000;
+                    total += 1000;
+                }
+            } else if (type == '2') {
+                total = 3000;
+            } else if (type == '3') {
+                total = 1000;
+            } else {
+                return "沒有這一類";
+            }
+            return "補助款:" + total;
+        }
+        document.write(showTypeTotal("1", true) + "<br>");
+        document.write(showTypeTotal("2", true) + "<br>");
+        document.write(showTypeTotal("3", true) + "<br>");
+        document.write(showTypeTotal("4", true) + "<br>");
+    </script>
+
+    <h2>參數給預設值</h2>
+    <script>
+        function showMsg(msg = "Hi~") {
+            document.write(msg + "<br>");
+        }
+        showMsg();
+        showMsg("哈囉~");
+    </script>
+
+    <h2>函式宣告</h2>
+    <script>
+        sayYoYo();
+        function sayYoYo() {
+            document.write("不要這樣比較好啦 <br>");
+        }
+    </script>
+
+    <h2>函式運算式</h2>
+    <script>
+        var sayHi = function () {    // 匿名函式
+            document.write('Hi <br>');
+        }
+        sayHi();
+    </script>
+
+    <h2>箭頭函式</h2>
+    <script>
+        var myFunction = () => {
+            document.write("我是箭頭函式! <br>");
+        }
+        myFunction();
+    </script>
+
+    <h2>arguments</h2>
+    <script>
+        function sum(a, b) {
+
+            console.log(arguments);
+
+            var total = 0;
+
+            for (var i = 0; i < arguments.length; i++) {
+                total += arguments[i];
+            }
+            return total;
+        }
+        document.write(sum(2, 4, 6, 8, 10, 12) + "<br>");
+    </script>
+
+    <h2>callback function</h2>
+    <script>
+        function a_function(x) {
+            document.write("這是a function <br>");
+            x();
+        }
+        function b_function() {
+            document.write("這是b function <br>");
+        }
+
+        a_function(b_function);
+    </script>
+
+    <h2>callback function(2)</h2>
+    <script>
+        function total_1(num1, num2) {
+            document.write(num1 + num2 + "<br>");
+        }
+        function total_2(num1, num2) {
+            document.write(num1 * num2 + "<br>");
+        }
+        function c_function(num1, num2, callback) {
+            callback(num1, num2);
+        }
+        c_function(3, 5, total_1);
+        c_function(3, 5, total_2);
+
+
+    </script>
+
+
+
+</body>
+
+</html>

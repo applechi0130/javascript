@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>Array</h2>
+    <script>
+        var arr = new Array();
+        arr[0] = "A";
+        arr[1] = "B";
+        arr[2] = "C";
+
+        document.write(arr);
+
+        // console.log(arr);
+    </script>
+
+    <h2>new Array(n)</h2>
+    <script>
+        var arr2 = new Array(6);
+        arr2[0] = "D";
+        arr2[1] = "E";
+        arr2[2] = "F";
+        arr2[3] = "G";
+        arr2[4] = "H";
+        arr2[5] = "I";
+        arr2[6] = "J";
+        arr2[7] = "K";  // JS不會報錯
+        document.write(arr2);
+    </script>
+
+    <h2>new Array(v1,v2,...)</h2>
+    <script>
+        var arr3 = new Array("G","H","I");
+        document.write(arr3 + "<br>");
+        document.write(arr3[1] + "<br>");
+
+    </script>
+
+    <h2>[v1,v2...l</h2>
+    <script>
+        var arr4 = ["J","K","L"]
+        document.write(arr4 + "<br>");
+        document.write(arr4[2] + "<br>");
+    </script>
+
+    <h2>arr.length取值</h2>
+    <script>
+        var arr = [11,66,33,55,44,22];
+        // console.log(arr);
+        document.write("arr.length : " + arr.length + "<br>"); //6
+
+        for(var i = 0; i < arr.length; i++){
+            document.write(arr[i] + "<br>");
+        }
+    </script>
+
+    <h2>for(i in arr)</h2>
+    <script>
+        var arr = [11,22,33];
+        arr[7] = 100;
+
+        // console.log(arr); // length = 8
+        for(var i in arr){
+            document.write(i + ":" + arr[i] + "<br>");
+        }
+    </script>
+
+    <h2>手動陣列轉字串</h2>
+    <script>
+        var arr = [11,22,33,44,55,66];
+        var str = "";
+        var length = arr.length;
+
+        for(var i = 0; i < length-1 ; i++){
+            str += arr[i] + ","
+        }
+        str += arr[i];
+
+        document.write(str + "<br>");
+        document.write(arr + "<br>");
+        document.write(typeof str + "<br>");
+        document.write(typeof arr + "<br>");
+    </script>
+
+    <h2>toString()</h2>
+    <script>
+        var arr = [11,22,33,44,55,66];
+        document.write(arr.toString() + "<br>");
+        document.write(typeof arr.toString() + "<br>");
+    </script>
+
+    <h2>join()</h2>
+    <script>
+        var arr = ['3334','2344','2342','7765'];
+        document.write(arr.join("*") + "<br>");
+    </script>
+
+    <h2>push(),pop()</h2>
+    <script>
+        var arr = [11,22,33];
+        arr.push(1000);
+        arr.push(2000);
+        document.write(arr + "<br>");
+        
+        var data = arr.pop();
+        document.write("pop取走的是" + data + "<br>");
+        document.write(arr + "<br>");
+    </script>
+
+    <h2>unshift(),shift()</h2>
+    <script>
+        var arr = [11,22,33];
+        arr.unshift(1000);
+        arr.unshift(2000);
+        document.write(arr + "<br>");
+
+        var data = arr.shift();
+        document.write(arr + "<br>");
+        document.write("shift取走的是" + data + "<br>");
+    </script>
+
+    <h2>indexOf()</h2>
+    <script>
+        var arr = ['apple','banana','strawberry'];
+        var find = arr.indexOf('banana');
+        //  找的到是索引值;找不到是-1
+        document.write(find + "<br>");
+    </script>
+
+    <h2>indexOf()去重複</h2>
+    <script>
+        var arr = ['a','b','c','d','a','a','b']
+        var newArr = [];
+
+        for(var i = 0; i < arr.length; i++){
+            if(newArr.indexOf(arr[i]) == -1){
+                newArr.push(arr[i]);
+            }
+        }
+        document.write(newArr + "<br>");
+    </script>
+
+    <h2>slice(start,end)</h2>
+    <script>
+        var arr = [11,22,33,44,55,66,77];
+        var arr2 = arr.slice(2,5); 
+        //  從索引2開始,取到索引5之前
+        document.write(arr + "<br>");
+        document.write(arr2);
+    </script>
+
+    <h2>splice(start,length,nv1,nv2,...)</h2>
+    <script>
+        var arr = [11,22,33,44,55,66,77,88,99];
+        var arr2 = arr.splice(2,5,1000,2000);
+        //  從索引2開始,共5個都要被取走
+        document.write(arr + "<br>");
+        document.write(arr2 + "<br>");
+    </script>
+
+    <h2>reverse() 反轉陣列</h2>
+    <script>
+        var arr = [11,22,33,44,55];
+        document.write(arr + "<br>");
+
+        arr.reverse();
+        document.write(arr + "<br>");
+    </script>
+
+    <h2>練習</h2>
+    <script>
+        var arr = new Array(6);
+        arr.push(1);
+        arr.push(2);
+        document.write(arr.length);
+    </script>
+
+
+
+
+
+
+</body>
+</html>

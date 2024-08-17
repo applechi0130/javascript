@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>這裡有段文字~~~</p>
+    </div>
+    <script>
+        var app = document.querySelector('#app').innerHTML;
+        var appText = document.querySelector('#app').innerText;
+        console.log(app);
+        console.log(appText);
+
+        var html = `
+            <hr>
+            <p>新的一段文字<p>
+            <hr>
+        `;
+        document.querySelector('#app').innerHTML = html;  
+        // 把html結構和文字渲染到頁面上
+
+        // document.querySelector('#app').innerText = html;
+        // 純文字顯示
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

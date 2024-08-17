@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>資料型別-基本</h2>
+    <script>
+        var stringTest = "文字";
+        document.write(typeof stringTest + "<br>");
+
+        var numTest = 123;
+        document.write(typeof numTest + "<br>");
+
+        var boleanTest = true;
+        document.write(typeof boleanTest + "<br>");
+    </script>
+
+    <h2>資料型別-簡單</h2>
+    <script>
+        var nullTest = null;
+        document.write(typeof nullTest + "<br>");
+        // object
+
+        var undefinedTest;
+        document.write(typeof undefinedTest + "<br>");
+    </script>
+
+    <h2>資料型別-複合</h2>
+    <script>
+        var arr = [1,2,3,4,5];
+        document.write(typeof arr + "<br>");
+
+        var obj = {
+            name : "Jack",
+            age : 20
+        };
+        document.write(typeof obj + "<br>");
+    </script>
+
+    <h2>資料型別-特殊</h2>
+    <script>
+        function functionTest(){
+            console.log("yoyoyo~~~");
+        }
+        functionTest(); //主控台顯示
+        functionTest(); //主控台顯示
+        functionTest(); //主控台顯示
+
+        document.write(typeof functionTest + "<br>");
+    </script>
+
+    <h2>typeof判斷資料型別</h2>
+    <script>
+        var stringTest2 = "文字";
+        if(typeof stringTest2 == "string"){
+            console.log("對歐,是字串!");
+        }
+    </script>
+
+    <h2>強制轉換型別-數值篇</h2>
+    <script>
+        var types = "2.8";
+        
+        document.write(Number(types) + "<br>");
+        document.write(typeof Number(types) + "<br>");
+
+        document.write(parseInt(types) + "<br>");
+        document.write(typeof parseInt(types) + "<br>");
+    
+        document.write(parseFloat(types) + "<br>");
+        document.write(typeof parseFloat(types) + "<br>");
+    
+    </script>
+
+</body>
+</html>

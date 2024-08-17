@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: darksalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>alert</h2>
+    <button id="alertBtn">alert</button>
+    <script>
+        // window.alert("ALERT!!!"); // window. 可省略
+        function showAlert() {
+            alert('^____________<');
+        }
+        document.querySelector("#alertBtn").addEventListener('click', showAlert);
+        // "#"" 代表idName
+    </script>
+
+    <h2>confirm</h2>
+    <button id="confirmBtn">confirm</button>
+    <script>
+        // var ans = confirm("你確定嗎?");
+        // console.log(ans);
+        function showConfirm() {
+            var ans = confirm("你確定嗎?");
+            if (ans) {
+                console.log("喔耶~~~");
+            } else {
+                console.log("QQ");
+            }
+
+
+        }
+        document.querySelector("#confirmBtn").addEventListener('click', showConfirm);
+    </script>
+
+    <h2>prompt</h2>
+    <button id="promptBtn">prompt</button>
+    <script>
+        // var ans = prompt("請輸入帳號");
+        // console.log(ans);
+        function showPrompt() {
+            var bookNo = prompt("請輸入書號");
+            if (bookNo) {
+                console.log("書號: " + bookNo);
+            } else {
+                console.log("沒有書號");
+            }
+        }
+        document.querySelector('#promptBtn').
+            addEventListener('click', showPrompt);
+    </script>
+
+    <h2>innerWidth</h2>
+    <script>
+        // document.write(window.innerWidth);
+        function show innerWidth(){
+            console.log(window.innerWidth)
+        }
+
+        window.addEventListener('resize', showInnerWidth);
+    </script>
+</body>
+
+<h2>location</h2>
+<button id="goGoogleBtn">goGoogleBtn</button>
+<script>
+// document.write(location + "<br>");
+// document.write(location.href + "<br>");
+// location.href = 'https://www.google.com.tw/?gws_rd=ssl';
+function goGoogle(){
+    location.href = 'https://www.google.com.tw/?gws_rd=ssl';
+
+}
+document.querySelector('#goGoogleBtn').addEventListener('click', goGoogle);
+</script>
+
+<h2>location.reload()</h2>
+<button id="reloadBtn">reload</button>
+<script>
+// location.reload();
+function goReload(){
+    location.reload();
+}
+document.querySelector('#reloadBtn').addEventListener('click', goReload);
+</script>
+
+
+
+
+
+
+
+</html>

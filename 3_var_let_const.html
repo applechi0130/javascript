@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <h2>宣告變數</h2>
+    <!--  -->
+    <script>
+        var product = 200;
+        document.write("$" + 200 + "<br>");
+
+        var product2;
+
+
+
+
+
+        product2 = 500;
+        document.write("$" + product2 + "<br>");
+    </script>
+    <h2>取變數名字要注意的地方</h2>
+    <script>
+        // var 1test = 20;
+        var apple = "小寫的蘋果";
+        var APPLE = "大寫的蘋果";
+        document.write(apple);
+    </script>
+
+    <h2>console.log()</h2>
+    <script>
+        console.log("測試console.log!");
+        var test = 'TEST';
+        console.log(test);
+        console.log("hi~" + test);
+        console.log("hi~" , test);
+        console.log(`hi!!!${test}`);
+    </script>
+
+    <h2>var有hoist(有hoist現象)</h2>
+    <script>
+        // document.write(a); // is not defined
+
+        // var a; //有宣告變數 沒給值
+        // document.write(a); //undefined
+
+        // 應該要報錯 => 如果後面有var =>
+        // 宣告變數的動作往前提升!但值不會一起提升
+        document.write(a);
+        var a = 10;
+    </script>
+
+    <h2>var可以重複宣告</h2>
+    <script>
+        var b = 100;
+        var b = 1000;
+        document.write(b);
+    </script>
+
+    <h2>var沒有區塊作用域</h2>
+    <script>
+        var avg = 66;
+        if(avg >= 60){
+            var word = "好棒~";
+        }else{
+            var word = "加油!";
+        }
+
+        document.write(word);
+    </script>
+    
+    <h2>let 有hoist(沒有hoist現象)</h2>
+    <script>
+        // var c;
+        // document.write(c); 
+        
+        // let c = 10;
+        // Cannot access 'c' before initialization
+    </script>
+
+    <h2>let不可以重複宣告</h2>
+    <script>
+        // let d = 100;
+        // let d = 1000;
+        
+        // document.write(d);
+        // Identifier 'd' has already been declared
+    </script>
+
+    <h2>let有區塊作用域</h2>
+    <script>
+        // let avg2 = 66;
+        // if(avg2 >= 60){
+        //     let words = "好棒!";
+        // }else{
+        //     let words = "加油~";
+        // }
+        // document.write(words);
+        // words is not defined
+        
+        let avg2 = 66;
+        let words;
+        if(avg2 >= 60){
+            words = "好棒!";
+        }else{
+            words = "加油~";
+        }
+        document.write(words);
+    </script>
+
+    <h2>const</h2>
+    <script>
+        // const e; 
+        //Missing initializer in const declaration
+        
+        // const PI = 3.14;
+        // const PI = 3;
+        // Identifier 'PI' has already been declared
+    
+        // const PI = 3/14;
+        // PI = 3;
+        // Assignment to constant variable.
+    
+        const obj = {
+            x : 20,
+            y : 50
+        };
+        obj.x = 200;
+        document.write(obj.x);
+    </script>
+
+</body>
+</html>

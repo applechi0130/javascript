@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: mediumvioletred;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ID 選擇器</h2>
+    <div id="root">id name 我們用在重要的東西上面,id唯一一個</div>
+    <script>
+        var root = document.getElementById("root");
+        // console.log(root);
+
+        root.style.color = 'blue';
+
+        var root2 = document.querySelector('#root');
+        // console.log(root2);
+        root2.style.color = 'green'
+    </script>
+
+    <h2>class選擇器 (一個className)</h2>
+    <div class="myClassName">單一個class name</div>
+    <script>
+        var className = document.getElementsByClassName('myClassName');
+
+        // console.log(className[0]);
+
+        var className2 = document.querySelectorAll('myClassName');
+
+        // console.log(className2[0]);
+
+        var classname3 = document.querySelector('.myClassName');
+        // console.log(className3);
+    </script>
+
+    <h2>class 選擇器(多個className)</h2>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+    <div class="box">box5</div>
+    <script>
+        var allBox = document.getElementsByClassName('box');
+        // console.log(allBox);
+        for (var i = 0; i < allBox.length; i++) {
+            if (i == 2) {
+                allBox[i].style.color = 'red';
+            }
+            var allBox2 = document.querySelectorAll('.box');
+            // console.log(allBox[i]);
+
+            for (var i = 0; i < allBox2.length; i++) {
+                // console.log(allBox2[i]);
+            }
+        }
+    </script>
+
+    <h2>屬性選擇器</h2>
+    <form>
+        <label>
+            男<input type="radio" name="gender" value="1">
+            <label>
+                <label>
+                    女<input type="radio" name="gender" value="2">
+                    <label>
+                        <label>
+                            皆可<input type="radio" name="gender" value="3">
+                            <label>
+    <button type="button" id="btn">click</button>
+
+    </form>
+    <script>
+        var gender = document.querySelectorAll('input [name = "gender"]');
+        // console.log(gender[0]);
+
+        // var checkedGender = document.querySelector('input [name = "gender"]':checked);
+        // console.log(checkedGender.value);
+
+        function showValue() {
+            var checkedGender = document.querySelector('input[name="gender"]:checked').value;
+            alert(checkedGender);
+        }
+
+        document.querySelector('#btn').addEventListener('click', showValue);
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
